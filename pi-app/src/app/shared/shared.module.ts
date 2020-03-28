@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
@@ -7,6 +8,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
   declarations: [],
   imports: [
     CommonModule,
+    HttpClientModule,
     ButtonsModule.forRoot()
   ],
   exports: [
