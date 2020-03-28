@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 - [json-server](https://www.npmjs.com/package/json-server)
+- [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/)
 
 ## Development server
 
