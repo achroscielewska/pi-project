@@ -31,18 +31,22 @@ a {
   font-size: 0.875rem;
 }
 
-.App-plain-text-bold {
-  font-size: 12px;
+.app-container {
+  width: 100%;
+  padding: 10px;
 }
 
-@media (min-width: $md) {
+@media (min-width: $md) {}
+
+@media (min-width: $lg) {
   body {
     font-size: 16px;
   }
+
+  .app-container {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
-@media (min-width: $lg) {
-}
-
-@media (min-width: $xl) {
-}
+@media (min-width: $xl) {}
