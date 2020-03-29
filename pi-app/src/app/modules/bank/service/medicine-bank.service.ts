@@ -22,9 +22,9 @@ export class MedicineBankService {
     return new HttpHeaders().append('Content-Type', 'application/json');
   }
 
-  getMedicineBankElements(): Observable<MedicineBank[]> {
+  getMedicineBankElements(): Observable<MedicineBankRequestDto> {
     return this.httpClient
       .get(`${this.medicineBankUrl}`, { ...this.headers })
-      .pipe(map((res: MedicineBank[]) => res));
+      .pipe(map((res: MedicineBankRequestDto) => res));
   }
 }

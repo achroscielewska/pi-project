@@ -17,12 +17,8 @@ export class MedicineBankComponent implements OnInit {
   constructor(private medicineBankStoreService: MedicineBankStoreService) { }
 
   ngOnInit(): void {
-    this.medicineBankStoreService.getMedicineBankList();
-
     this.medicineBankStoreService.currentMedicineBankStore.subscribe(data => {
       this.medicineBank = data;
-
-      console.log(this.medicineBank)
     });
   }
 }

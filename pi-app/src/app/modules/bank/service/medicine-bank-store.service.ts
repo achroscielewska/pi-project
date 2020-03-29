@@ -11,9 +11,9 @@ export class MedicineBankStoreService {
 
   constructor(private medicineBankService: MedicineBankService) {}
 
-  getMedicineBankList() {
+  getMedicineBankList(): void {
     this.medicineBankService.getMedicineBankElements().subscribe(
-      res => this.medicineBankStore.next(res),
+      res => this.medicineBankStore.next(res.elements),
       err => console.log(err)
     );
   }

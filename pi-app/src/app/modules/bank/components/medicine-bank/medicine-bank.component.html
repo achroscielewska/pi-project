@@ -1,1 +1,14 @@
-<p>medicine-bank works!</p>
+<p>medicine bank</p>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>producer</th>
+  </tr>
+
+  <tr *ngFor="let item of medicineBank">
+    <td>{{item.name}}</td>
+    <td>{{item.producer}}</td>
+  </tr>
+
+</table>

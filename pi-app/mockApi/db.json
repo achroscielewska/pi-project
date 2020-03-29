@@ -1,8 +1,11 @@
 {
-  "medicineBank": [
-    {
-      "name": "test",
-      "producer": "test"
-    }
-  ]
+  "medicineBank": {
+    "elements": [
+      {
+        "name": "P",
+        "producer": "PROCARE HEALTH IBERIA, S.L.,",
+        "description": ""
+      }
+    ]
+  }
 }
