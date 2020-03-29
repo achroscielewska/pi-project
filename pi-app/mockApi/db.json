@@ -2,10 +2,48 @@
   "medicineBank": {
     "elements": [
       {
+        "code": "PAP",
         "name": "P",
         "producer": "PROCARE HEALTH IBERIA, S.L.,",
+        "quantity": 7,
+        "capacity": "5ml",
+        "weight": "",
         "description": ""
       }
     ]
-  }
+  },
+  "warehouse":
+    [
+      {
+        "code" : "AGA",
+        "elements": [
+          {
+            "id": 1,
+            "medicine": {
+              "code": "PAP",
+              "name": "P"
+            },
+            "purchase" : [{
+              "purchaseDate": "2020-03-27",
+              "pharmacy": {
+                "name": "abc",
+                "link": "abc.com"
+              },
+              "price": 70.0,
+              "boxes": 4
+            }],
+            "availability": {
+              "boxes": 4,
+              "noOfDoses": 28
+            },
+            "doses": [
+              {
+                "date": "2020-03-27",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
 }

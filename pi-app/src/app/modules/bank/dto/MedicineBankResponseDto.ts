@@ -1,5 +1,5 @@
 import { MedicineBank } from '../model/MedicineBank';
 
-export interface MedicineBankRequestDto {
+export interface MedicineBankResponseDto {
   elements: MedicineBank[];
 }

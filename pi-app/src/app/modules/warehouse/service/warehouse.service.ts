@@ -5,15 +5,16 @@ import { environment as env } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { MedicineBankResponseDto } from '../dto/MedicineBankResponseDto';
+import { WarehouseResponseDto } from '../dto/WarehouseResponseDto';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MedicineBankService {
+export class WarehouseService {
   headers = this.prepareHeaders();
 
-  medicineBankUrl = `${env.bank.medicineBankUrl}`;
+  warehouseUrl = `${env.warehouseUrl}`;
+  codeQuery = `code=`;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,9 +22,9 @@ export class MedicineBankService {
     return new HttpHeaders().append('Content-Type', 'application/json');
   }
 
-  getMedicineBankElements(): Observable<MedicineBankResponseDto> {
+  getWarehouseByCode(code: string): Observable<WarehouseResponseDto> {
     return this.httpClient
-      .get(`${this.medicineBankUrl}`, { ...this.headers })
-      .pipe(map((res: MedicineBankResponseDto) => res));
+      .get(`${this.warehouseUrl}?${this.codeQuery}${code}`, { ...this.headers })
+      .pipe(map((res: WarehouseResponseDto) => res));
   }
 }

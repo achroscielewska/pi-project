@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MedicineBankService } from '../../service/medicine-bank.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { MedicineBank } from '../../model/MedicineBank';
 import { MedicineBankStoreService } from '../../service/medicine-bank-store.service';
@@ -9,7 +8,7 @@ import { MedicineBankStoreService } from '../../service/medicine-bank-store.serv
   templateUrl: './medicine-bank.component.html',
   styleUrls: ['./medicine-bank.component.scss']
 })
-export class MedicineBankComponent implements OnInit {
+export class MedicineBankComponent implements OnInit, OnDestroy{
   medicineBank$: Observable<MedicineBank[]>;
   medicineBankSub: Subscription;
   medicineBank: MedicineBank[];
@@ -17,8 +16,13 @@ export class MedicineBankComponent implements OnInit {
   constructor(private medicineBankStoreService: MedicineBankStoreService) { }
 
   ngOnInit(): void {
-    this.medicineBankStoreService.currentMedicineBankStore.subscribe(data => {
-      this.medicineBank = data;
-    });
+    this.medicineBank$ = this.medicineBankStoreService.currentMedicineBankStore;
+    this.medicineBankSub = this.medicineBank$.subscribe(data =>
+      this.medicineBank = data
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.medicineBankSub.unsubscribe();
   }
 }

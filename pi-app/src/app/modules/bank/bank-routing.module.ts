@@ -4,13 +4,9 @@ import { MedicineBankComponent } from './components';
 
 const routes: Routes = [
   {
-    path: 'bank', children: [
-      {
-        path: 'medicineBank',
-        component: MedicineBankComponent
-      },
-    ]
-  }
+    path: 'medicineBank',
+    component: MedicineBankComponent
+  },
 ];
 
 @NgModule({

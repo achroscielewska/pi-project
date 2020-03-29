@@ -1,5 +1,7 @@
 export class MedicineBank {
-  name: string;
-  producer: string;
-  description?: string;
+  constructor(
+    public name = '',
+    public producer = '',
+    public description = '',
+  ) {}
 }
